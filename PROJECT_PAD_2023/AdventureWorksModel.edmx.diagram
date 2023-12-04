@@ -4,10 +4,10 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="0acf89e425d9486f9bc8643dcdbc105c" Name="Diagram1" ZoomLevel="92">
+      <Diagram DiagramId="0acf89e425d9486f9bc8643dcdbc105c" Name="Diagram1" ZoomLevel="77">
         <EntityTypeShape EntityType="AdventureWorks2022Model.Department" Width="1.5" PointX="56.625" PointY="43.25" IsExpanded="true" />
         <EntityTypeShape EntityType="AdventureWorks2022Model.Employee" Width="1.5" PointX="53.625" PointY="5.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="AdventureWorks2022Model.EmployeeDepartmentHistory" Width="1.5" PointX="58.875" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdventureWorks2022Model.EmployeeDepartmentHistory" Width="2.75" PointX="58.875" PointY="6.375" IsExpanded="true" />
         <EntityTypeShape EntityType="AdventureWorks2022Model.EmployeePayHistory" Width="1.5" PointX="55.875" PointY="5.75" IsExpanded="true" />
         <EntityTypeShape EntityType="AdventureWorks2022Model.JobCandidate" Width="1.5" PointX="55.875" PointY="14.75" IsExpanded="true" />
         <EntityTypeShape EntityType="AdventureWorks2022Model.Shift" Width="1.5" PointX="56.625" PointY="46" IsExpanded="true" />
