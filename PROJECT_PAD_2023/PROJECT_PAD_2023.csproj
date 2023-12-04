@@ -125,6 +125,12 @@
     <Compile Include="EmployeeDepartmentHistory.cs">
       <DependentUpon>AdventureWorksModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="EmployeeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeForm.Designer.cs">
+      <DependentUpon>EmployeeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="EmployeePayHistory.cs">
       <DependentUpon>AdventureWorksModel.tt</DependentUpon>
     </Compile>

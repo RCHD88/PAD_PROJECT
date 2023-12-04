@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PROJECT_PAD_2023.Controller
 {
-    internal class EmployeeController
+    public class EmployeeController
     {
         AdventureWorks2022Entities database;
         public EmployeeController()
@@ -15,12 +15,13 @@ namespace PROJECT_PAD_2023.Controller
         }
         public Employee loginAuthentication(string email)
         {
-            try
+            bool email_available = database.EmailAddresses.Any(em => em.EmailAddress1.Equals(email));
+            if (email_available)
             {
                 Employee employee = database.EmailAddresses.Where(em => em.EmailAddress1.Equals(email)).FirstOrDefault().Person.Employee;
                 return employee;
             }
-            catch (NullReferenceException ex)
+            else
             {
                 return null;
             }

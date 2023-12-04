@@ -28,6 +28,10 @@ namespace PROJECT_PAD_2023
             if(employee != null )
             {
                 MessageBox.Show("Berhasil login");
+                EmployeeForm employeeForm = new EmployeeForm(employee, employeeController);
+                this.Hide();
+                employeeForm.ShowDialog();
+                this.Show();
             }
             else
             {
