@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'D:\Doc_STTS\semester3\PAD\PROJECT\PROJECT_PAD_2022\PROJECT_PAD_2022\AdventureWorksModel.edmx'. 
+﻿// T4 code generation is enabled for model 'D:\KULIAH\semester3\PAD\porjectPAD\PAD_PROJECT\PROJECT_PAD_2022\AdventureWorksModel.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

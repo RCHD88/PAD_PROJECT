@@ -18,6 +18,12 @@ namespace PROJECT_PAD_2022.forms
         {
             InitializeComponent();
             this.controller = controller;
+            
+            dataGridView1.DataSource = controller.LoadDgv();
+            dataGridView1.Columns[1].HeaderText = "Jenis kelamin";
         }
+
+        
+        
     }
 }
