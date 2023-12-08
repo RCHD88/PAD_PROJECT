@@ -28,57 +28,94 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl = new System.Windows.Forms.TabControl();
-            this.dataTabPage = new System.Windows.Forms.TabPage();
-            this.reportTabPage = new System.Windows.Forms.TabPage();
+            this.activeTab = new System.Windows.Forms.TabPage();
+            this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.inactiveTab = new System.Windows.Forms.TabPage();
             this.label1 = new System.Windows.Forms.Label();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
-            this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.labelTextTotal = new System.Windows.Forms.Label();
+            this.labelTotal = new System.Windows.Forms.Label();
+            this.reportTab = new System.Windows.Forms.TabPage();
+            this.logoutButton = new System.Windows.Forms.Button();
+            this.addButton = new System.Windows.Forms.Button();
+            this.updateButton = new System.Windows.Forms.Button();
             this.tabControl.SuspendLayout();
-            this.dataTabPage.SuspendLayout();
-            this.statusStrip.SuspendLayout();
+            this.activeTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
+            this.statusStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl
             // 
-            this.tabControl.Controls.Add(this.dataTabPage);
-            this.tabControl.Controls.Add(this.reportTabPage);
-            this.tabControl.Location = new System.Drawing.Point(12, 36);
+            this.tabControl.Controls.Add(this.activeTab);
+            this.tabControl.Controls.Add(this.inactiveTab);
+            this.tabControl.Controls.Add(this.reportTab);
+            this.tabControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControl.Location = new System.Drawing.Point(12, 48);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(912, 525);
+            this.tabControl.Size = new System.Drawing.Size(1116, 513);
             this.tabControl.TabIndex = 1;
             // 
-            // dataTabPage
+            // activeTab
             // 
-            this.dataTabPage.Controls.Add(this.dataGridView);
-            this.dataTabPage.Location = new System.Drawing.Point(4, 22);
-            this.dataTabPage.Name = "dataTabPage";
-            this.dataTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.dataTabPage.Size = new System.Drawing.Size(904, 499);
-            this.dataTabPage.TabIndex = 0;
-            this.dataTabPage.Text = "Data";
-            this.dataTabPage.UseVisualStyleBackColor = true;
+            this.activeTab.Controls.Add(this.updateButton);
+            this.activeTab.Controls.Add(this.addButton);
+            this.activeTab.Controls.Add(this.labelTotal);
+            this.activeTab.Controls.Add(this.labelTextTotal);
+            this.activeTab.Controls.Add(this.dataGridView);
+            this.activeTab.Location = new System.Drawing.Point(4, 24);
+            this.activeTab.Name = "activeTab";
+            this.activeTab.Padding = new System.Windows.Forms.Padding(3);
+            this.activeTab.Size = new System.Drawing.Size(1108, 485);
+            this.activeTab.TabIndex = 0;
+            this.activeTab.Text = "Active Employee";
+            this.activeTab.UseVisualStyleBackColor = true;
             // 
-            // reportTabPage
+            // dataGridView
             // 
-            this.reportTabPage.Location = new System.Drawing.Point(4, 22);
-            this.reportTabPage.Name = "reportTabPage";
-            this.reportTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.reportTabPage.Size = new System.Drawing.Size(904, 502);
-            this.reportTabPage.TabIndex = 1;
-            this.reportTabPage.Text = "Report";
-            this.reportTabPage.UseVisualStyleBackColor = true;
+            this.dataGridView.AllowUserToAddRows = false;
+            this.dataGridView.AllowUserToDeleteRows = false;
+            this.dataGridView.AllowUserToResizeColumns = false;
+            this.dataGridView.AllowUserToResizeRows = false;
+            this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView.Location = new System.Drawing.Point(7, 33);
+            this.dataGridView.Name = "dataGridView";
+            this.dataGridView.ReadOnly = true;
+            this.dataGridView.RowHeadersVisible = false;
+            this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView.Size = new System.Drawing.Size(1095, 408);
+            this.dataGridView.TabIndex = 0;
+            // 
+            // inactiveTab
+            // 
+            this.inactiveTab.Location = new System.Drawing.Point(4, 22);
+            this.inactiveTab.Name = "inactiveTab";
+            this.inactiveTab.Padding = new System.Windows.Forms.Padding(3);
+            this.inactiveTab.Size = new System.Drawing.Size(1036, 499);
+            this.inactiveTab.TabIndex = 1;
+            this.inactiveTab.Text = "Inactive Employee";
+            this.inactiveTab.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(315, 24);
+            this.label1.Size = new System.Drawing.Size(396, 29);
             this.label1.TabIndex = 2;
             this.label1.Text = "Welcome to Human Resource Form";
             // 
@@ -95,33 +132,80 @@
             this.toolStripStatusLabel1});
             this.statusStrip.Location = new System.Drawing.Point(0, 569);
             this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Size = new System.Drawing.Size(936, 22);
+            this.statusStrip.Size = new System.Drawing.Size(1140, 22);
             this.statusStrip.SizingGrip = false;
             this.statusStrip.TabIndex = 0;
             this.statusStrip.Text = "statusStrip1";
             // 
-            // dataGridView
+            // labelTextTotal
             // 
-            this.dataGridView.AllowUserToAddRows = false;
-            this.dataGridView.AllowUserToDeleteRows = false;
-            this.dataGridView.AllowUserToResizeColumns = false;
-            this.dataGridView.AllowUserToResizeRows = false;
-            this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView.Location = new System.Drawing.Point(7, 6);
-            this.dataGridView.Name = "dataGridView";
-            this.dataGridView.ReadOnly = true;
-            this.dataGridView.RowHeadersVisible = false;
-            this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView.Size = new System.Drawing.Size(891, 263);
-            this.dataGridView.TabIndex = 0;
+            this.labelTextTotal.AutoSize = true;
+            this.labelTextTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTextTotal.Location = new System.Drawing.Point(6, 11);
+            this.labelTextTotal.Name = "labelTextTotal";
+            this.labelTextTotal.Size = new System.Drawing.Size(129, 13);
+            this.labelTextTotal.TabIndex = 1;
+            this.labelTextTotal.Text = "TOTAL EMPLOYEE : ";
+            // 
+            // labelTotal
+            // 
+            this.labelTotal.AutoSize = true;
+            this.labelTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTotal.Location = new System.Drawing.Point(132, 11);
+            this.labelTotal.Name = "labelTotal";
+            this.labelTotal.Size = new System.Drawing.Size(21, 13);
+            this.labelTotal.TabIndex = 2;
+            this.labelTotal.Text = "10";
+            // 
+            // reportTab
+            // 
+            this.reportTab.Location = new System.Drawing.Point(4, 22);
+            this.reportTab.Name = "reportTab";
+            this.reportTab.Padding = new System.Windows.Forms.Padding(3);
+            this.reportTab.Size = new System.Drawing.Size(1036, 499);
+            this.reportTab.TabIndex = 2;
+            this.reportTab.Text = "Report";
+            this.reportTab.UseVisualStyleBackColor = true;
+            // 
+            // logoutButton
+            // 
+            this.logoutButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.logoutButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.logoutButton.Location = new System.Drawing.Point(1031, 12);
+            this.logoutButton.Name = "logoutButton";
+            this.logoutButton.Size = new System.Drawing.Size(87, 26);
+            this.logoutButton.TabIndex = 3;
+            this.logoutButton.Text = "LOG OUT";
+            this.logoutButton.UseVisualStyleBackColor = false;
+            this.logoutButton.Click += new System.EventHandler(this.logoutButton_Click);
+            // 
+            // addButton
+            // 
+            this.addButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.addButton.Location = new System.Drawing.Point(9, 448);
+            this.addButton.Name = "addButton";
+            this.addButton.Size = new System.Drawing.Size(167, 30);
+            this.addButton.TabIndex = 3;
+            this.addButton.Text = "Add New Employee";
+            this.addButton.UseVisualStyleBackColor = false;
+            // 
+            // updateButton
+            // 
+            this.updateButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.updateButton.Location = new System.Drawing.Point(182, 448);
+            this.updateButton.Name = "updateButton";
+            this.updateButton.Size = new System.Drawing.Size(167, 30);
+            this.updateButton.TabIndex = 4;
+            this.updateButton.Text = "Update Employee";
+            this.updateButton.UseVisualStyleBackColor = false;
             // 
             // HumanResourceForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(936, 591);
+            this.ClientSize = new System.Drawing.Size(1140, 591);
+            this.Controls.Add(this.logoutButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tabControl);
             this.Controls.Add(this.statusStrip);
@@ -131,10 +215,11 @@
             this.Text = "Human Resource";
             this.Load += new System.EventHandler(this.HumanResourceForm_Load);
             this.tabControl.ResumeLayout(false);
-            this.dataTabPage.ResumeLayout(false);
+            this.activeTab.ResumeLayout(false);
+            this.activeTab.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.statusStrip.ResumeLayout(false);
             this.statusStrip.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -142,11 +227,17 @@
 
         #endregion
         private System.Windows.Forms.TabControl tabControl;
-        private System.Windows.Forms.TabPage dataTabPage;
-        private System.Windows.Forms.TabPage reportTabPage;
+        private System.Windows.Forms.TabPage activeTab;
+        private System.Windows.Forms.TabPage inactiveTab;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.StatusStrip statusStrip;
         private System.Windows.Forms.DataGridView dataGridView;
+        private System.Windows.Forms.Label labelTotal;
+        private System.Windows.Forms.Label labelTextTotal;
+        private System.Windows.Forms.TabPage reportTab;
+        private System.Windows.Forms.Button logoutButton;
+        private System.Windows.Forms.Button updateButton;
+        private System.Windows.Forms.Button addButton;
     }
 }

@@ -14,7 +14,6 @@ namespace PROJECT_PAD_2022.forms
     public partial class HumanResourceForm : Form
     {
         HumanResourcesController controller;
-
         public HumanResourceForm(HumanResourcesController controller)
         {
             InitializeComponent();
@@ -28,6 +27,22 @@ namespace PROJECT_PAD_2022.forms
         public void ResetDataTabPage()
         {
             dataGridView.DataSource = controller.getData();
+            labelTotal.Text = controller.getData().Count.ToString();
+            addActionButton();
+        }
+        public void addActionButton()
+        {
+            //add button column change status
+            DataGridViewButtonColumn buttonColumn = new DataGridViewButtonColumn();
+            buttonColumn.HeaderText = "Change Status";
+            buttonColumn.Name = "DeactiveBtn";
+            buttonColumn.DefaultCellStyle.NullValue = "Deactive";
+            dataGridView.Columns.Add(buttonColumn);
+        }
+
+        private void logoutButton_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

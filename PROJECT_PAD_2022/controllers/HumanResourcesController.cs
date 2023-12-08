@@ -20,11 +20,15 @@ namespace PROJECT_PAD_2022.controllers
             var data = (from Employee e in database.Employees
                        select new
                        {
-                           BusinessID = e.BusinessEntityID,
-                           NationalID = e.NationalIDNumber,
-                           JobTitle = e.JobTitle,
-                           HireDate = e.HireDate,
-                           Gender = e.Gender == "M" ? "Laki-laki" : "Wanita"
+                           Business_ID = e.BusinessEntityID,
+                           Name = e.Person.FirstName + " " + e.Person.LastName,
+                           Job_Title = e.JobTitle,
+                           Hire_Date = e.HireDate,
+                           Salaried = e.SalariedFlag ? "salaried" : "hourly",
+                           Vacation_Hours = e.VacationHours + " Hours",
+                           Sick_Hours = e.SickLeaveHours + " Hours",
+                           Gender = e.Gender == "M" ? "Laki-laki" : "Wanita",
+                           Marital_Status = e.MaritalStatus == "M" ? "Maried" : "Single"
                        }).ToList();
             List<Object> dataList = data.Cast<Object>().ToList();
             return dataList;

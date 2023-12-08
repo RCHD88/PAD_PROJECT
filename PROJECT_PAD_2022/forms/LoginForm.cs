@@ -31,27 +31,33 @@ namespace PROJECT_PAD_2022
                 if(department_name == "Sales")
                 {
                     SalesForm form = new SalesForm(employeeController.GetSalesControllerWithDB());
+                    this.Hide();
                     form.ShowDialog();
                 }
                 else if (department_name == "Purchasing")
                 {
                     PurchasingForm form = new PurchasingForm(employeeController.getPurchasingControllerWithDB());
+                    this.Hide();
                     form.ShowDialog();
                 }
                 else if(department_name == "Production")
                 {
                     ProductionForm form = new ProductionForm(employeeController.getProductionControllerWithDB());
+                    this.Hide();
                     form.ShowDialog();
                 }
                 else if(department_name == "Human Resources")
                 {
                     HumanResourceForm form = new HumanResourceForm(employeeController.getHumanResourcesControllerWithDB());
+                    this.Hide();
                     form.ShowDialog();
                 }
                 else
                 {
                     MessageBox.Show("Aplikasi hanya disediakan untuk employee pada department tertentu !");
                 }
+                emailTextBox.Text = string.Empty;
+                this.Show();
             }
             else
             {
