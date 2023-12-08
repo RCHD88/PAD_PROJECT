@@ -101,6 +101,7 @@
             this.Controls.Add(this.labelHeader);
             this.Controls.Add(this.loginButton);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "LoginForm";
             this.Text = "LOGIN FORM";
             this.ResumeLayout(false);
