@@ -11,7 +11,7 @@
         <EntityTypeShape EntityType="AdventureWorks2022Model.Department" Width="1.5" PointX="12.75" PointY="42.625" IsExpanded="true" />
         <EntityTypeShape EntityType="AdventureWorks2022Model.Employee" Width="1.5" PointX="9.75" PointY="4.625" IsExpanded="true" />
         <EntityTypeShape EntityType="AdventureWorks2022Model.EmployeeDepartmentHistory" Width="1.5" PointX="15" PointY="5.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="AdventureWorks2022Model.EmployeePayHistory" Width="1.5" PointX="12" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdventureWorks2022Model.EmployeePayHistory" Width="2" PointX="12" PointY="5.125" IsExpanded="true" />
         <EntityTypeShape EntityType="AdventureWorks2022Model.JobCandidate" Width="1.5" PointX="12" PointY="14.125" IsExpanded="true" />
         <EntityTypeShape EntityType="AdventureWorks2022Model.Shift" Width="1.5" PointX="12.75" PointY="45.375" IsExpanded="true" />
         <EntityTypeShape EntityType="AdventureWorks2022Model.Address" Width="1.5" PointX="12" PointY="61.125" IsExpanded="true" />

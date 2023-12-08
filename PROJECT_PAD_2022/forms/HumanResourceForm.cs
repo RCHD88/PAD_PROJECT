@@ -14,10 +14,20 @@ namespace PROJECT_PAD_2022.forms
     public partial class HumanResourceForm : Form
     {
         HumanResourcesController controller;
+
         public HumanResourceForm(HumanResourcesController controller)
         {
             InitializeComponent();
             this.controller = controller;
+        }
+
+        private void HumanResourceForm_Load(object sender, EventArgs e)
+        {
+            ResetDataTabPage();
+        }
+        public void ResetDataTabPage()
+        {
+            dataGridView.DataSource = controller.getData();
         }
     }
 }
