@@ -101,6 +101,10 @@
       <DependentUpon>AdventureWorksModel.tt</DependentUpon>
     </Compile>
     <Compile Include="controllers\EmployeeController.cs" />
+    <Compile Include="controllers\HumanResourcesController.cs" />
+    <Compile Include="controllers\ProductionController.cs" />
+    <Compile Include="controllers\PurchasingController.cs" />
+    <Compile Include="controllers\SalesController.cs" />
     <Compile Include="CountryRegion.cs">
       <DependentUpon>AdventureWorksModel.tt</DependentUpon>
     </Compile>
