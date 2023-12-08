@@ -30,22 +30,22 @@ namespace PROJECT_PAD_2022
                 string department_name = employeeController.getDepartmentName();
                 if(department_name == "Sales")
                 {
-                    SalesForm form = new SalesForm();
+                    SalesForm form = new SalesForm(employeeController.GetSalesControllerWithDB());
                     form.ShowDialog();
                 }
                 else if (department_name == "Purchasing")
                 {
-                    PurchasingForm form = new PurchasingForm();
+                    PurchasingForm form = new PurchasingForm(employeeController.getPurchasingControllerWithDB());
                     form.ShowDialog();
                 }
                 else if(department_name == "Production")
                 {
-                    ProductionForm form = new ProductionForm();
+                    ProductionForm form = new ProductionForm(employeeController.getProductionControllerWithDB());
                     form.ShowDialog();
                 }
                 else if(department_name == "Human Resources")
                 {
-                    HumanResourceForm form = new HumanResourceForm();
+                    HumanResourceForm form = new HumanResourceForm(employeeController.getHumanResourcesControllerWithDB());
                     form.ShowDialog();
                 }
                 else

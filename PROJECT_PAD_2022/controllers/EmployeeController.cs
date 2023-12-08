@@ -15,6 +15,10 @@ namespace PROJECT_PAD_2022.controllers
         {
             database = new AdventureWorks2022Entities();
         }
+        public EmployeeController(AdventureWorks2022Entities database)
+        {
+            this.database = database;
+        }
         public Employee getCurrentLoggedInEmployee()
         {
             return employee;
@@ -37,6 +41,22 @@ namespace PROJECT_PAD_2022.controllers
                                .FirstOrDefault().Department.Name;
             }
             return "";
+        }
+        public HumanResourcesController getHumanResourcesControllerWithDB()
+        {
+            return new HumanResourcesController(database, employee);
+        }
+        public SalesController GetSalesControllerWithDB()
+        {
+            return new SalesController(database, employee);
+        }
+        public PurchasingController getPurchasingControllerWithDB()
+        {
+            return new PurchasingController(database, employee);
+        }
+        public ProductionController getProductionControllerWithDB()
+        {
+            return new ProductionController(database, employee);
         }
     }
 }

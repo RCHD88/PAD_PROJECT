@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PROJECT_PAD_2022.controllers;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,11 @@ namespace PROJECT_PAD_2022.forms
 {
     public partial class ProductionForm : Form
     {
-        public ProductionForm()
+        ProductionController controller;
+        public ProductionForm(ProductionController controller)
         {
             InitializeComponent();
+            this.controller = controller;
         }
     }
 }
