@@ -27,12 +27,53 @@ namespace PROJECT_PAD_2022.controllers
                                   ID = v.BusinessEntityID,
                                   Nama = v.Name,
                                   Web = v.PurchasingWebServiceURL != null ? v.PurchasingWebServiceURL : "-",
-                                  Rating = v.CreditRating == 1 ? "Superior" :
-                                           v.CreditRating == 2 ? "Excellent" :
-                                           v.CreditRating == 3 ? "Above average" :
-                                           v.CreditRating == 4 ? "Average" : "Below Average"
+                                  Rating = v.CreditRating == 1 ? "Superior (1)" :
+                                           v.CreditRating == 2 ? "Excellent (2)" :
+                                           v.CreditRating == 3 ? "Above average (3)" :
+                                           v.CreditRating == 4 ? "Average (4)" : "Below Average (5)"
                               }).ToList();
             return vendordata.Cast<object>().ToList();
+        }
+        public List<object> OrderVendorAsc(bool active,int orderby)
+        {
+            if (orderby==0)
+            {
+                
+                var vendordata = (from Vendor v in database.Vendors
+                                  .OrderByDescending(v => v.CreditRating)
+                                  where v.ActiveFlag == active
+                                  select new
+                                  {
+                                      ID = v.BusinessEntityID,
+                                      Nama = v.Name,
+                                      Web = v.PurchasingWebServiceURL != null ? v.PurchasingWebServiceURL : "-",
+                                      Rating = v.CreditRating == 1 ? "Superior (1)" :
+                                               v.CreditRating == 2 ? "Excellent (2)" :
+                                               v.CreditRating == 3 ? "Above average (3)" :
+                                               v.CreditRating == 4 ? "Average (4)" : "Below Average (5)"
+                                  })
+                                  .ToList();
+                return vendordata.Cast<object>().ToList();
+            }
+            else if(orderby==1)
+            {
+                var vendordata = (from Vendor v in database.Vendors
+                                  .OrderBy(v => v.CreditRating)
+                                  where v.ActiveFlag == active
+                                  select new
+                                  {
+                                      ID = v.BusinessEntityID,
+                                      Nama = v.Name,
+                                      Web = v.PurchasingWebServiceURL != null ? v.PurchasingWebServiceURL : "-",
+                                      Rating = v.CreditRating == 1 ? "Superior (1)" :
+                                               v.CreditRating == 2 ? "Excellent (2)" :
+                                               v.CreditRating == 3 ? "Above average (3)" :
+                                               v.CreditRating == 4 ? "Average (4)" : "Below Average (5)"
+                                  })
+                                  .ToList();
+                return vendordata.Cast<object>().ToList();
+            }
+            return null;
         }
 
         public bool updateData(bool status,int id)

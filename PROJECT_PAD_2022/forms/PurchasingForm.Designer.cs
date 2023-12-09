@@ -38,6 +38,7 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.purchaseTab.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vendorDGV)).BeginInit();
@@ -75,10 +76,14 @@
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(18, 25);
+            this.comboBox2.Items.AddRange(new object[] {
+            "Rating Terjelek",
+            "Rating Terbagus"});
+            this.comboBox2.Location = new System.Drawing.Point(63, 25);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(121, 21);
             this.comboBox2.TabIndex = 3;
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // vendorDGV
             // 
@@ -92,10 +97,10 @@
             this.vendorDGV.TabIndex = 1;
             this.vendorDGV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.vendorDGV_CellClick);
             this.vendorDGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.vendorDGV_CellContentClick);
-            
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.comboBox3);
             this.tabPage2.Controls.Add(this.vendorinactive);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
@@ -109,10 +114,11 @@
             // 
             this.vendorinactive.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.vendorinactive.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.vendorinactive.Location = new System.Drawing.Point(17, 28);
+            this.vendorinactive.Location = new System.Drawing.Point(50, 83);
             this.vendorinactive.Name = "vendorinactive";
             this.vendorinactive.Size = new System.Drawing.Size(704, 289);
             this.vendorinactive.TabIndex = 0;
+            this.vendorinactive.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.vendorinactive_CellContentClick);
             // 
             // tabPage3
             // 
@@ -153,6 +159,18 @@
             this.tabPage4.Text = "tabPage4";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
+            // comboBox3
+            // 
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Items.AddRange(new object[] {
+            "Rating Terjelek",
+            "Rating Terbagus"});
+            this.comboBox3.Location = new System.Drawing.Point(50, 26);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(121, 21);
+            this.comboBox3.TabIndex = 4;
+            this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
+            // 
             // PurchasingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -185,5 +203,6 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox comboBox3;
     }
 }
