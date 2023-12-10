@@ -18,6 +18,23 @@ namespace PROJECT_PAD_2022.forms
         {
             InitializeComponent();
             this.controller = controller;
+            dataGridView1.DataSource=controller.getProductList();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(comboBox1.SelectedIndex == 0)
+            {
+                dataGridView1.DataSource = controller.getSortedByListPrice();
+            }else if(comboBox1.SelectedIndex == 1)
+            {
+
+            }
         }
     }
 }

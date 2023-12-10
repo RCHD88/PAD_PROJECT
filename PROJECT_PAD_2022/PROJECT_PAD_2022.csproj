@@ -153,6 +153,12 @@
     <Compile Include="forms\HumanResourceForm.Designer.cs">
       <DependentUpon>HumanResourceForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\InsertCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\InsertCustomer.Designer.cs">
+      <DependentUpon>InsertCustomer.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -326,8 +332,14 @@
     <EmbeddedResource Include="forms\HumanResourceForm.resx">
       <DependentUpon>HumanResourceForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="forms\InsertCustomer.resx">
+      <DependentUpon>InsertCustomer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="forms\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\ProductionForm.resx">
+      <DependentUpon>ProductionForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\SalesForm.resx">
       <DependentUpon>SalesForm.cs</DependentUpon>
