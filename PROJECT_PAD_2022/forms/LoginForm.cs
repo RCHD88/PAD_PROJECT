@@ -40,12 +40,6 @@ namespace PROJECT_PAD_2022
                     this.Hide();
                     form.ShowDialog();
                 }
-                else if(department_name == "Production")
-                {
-                    ProductionForm form = new ProductionForm(employeeController.getProductionControllerWithDB());
-                    this.Hide();
-                    form.ShowDialog();
-                }
                 else if(department_name == "Human Resources")
                 {
                     HumanResourceForm form = new HumanResourceForm(employeeController.getHumanResourcesControllerWithDB());

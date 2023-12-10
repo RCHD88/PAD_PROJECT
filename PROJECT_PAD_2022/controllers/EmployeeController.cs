@@ -54,9 +54,5 @@ namespace PROJECT_PAD_2022.controllers
         {
             return new PurchasingController(database, employee);
         }
-        public ProductionController getProductionControllerWithDB()
-        {
-            return new ProductionController(database, employee);
-        }
     }
 }

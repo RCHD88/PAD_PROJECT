@@ -102,7 +102,6 @@
     </Compile>
     <Compile Include="controllers\EmployeeController.cs" />
     <Compile Include="controllers\HumanResourcesController.cs" />
-    <Compile Include="controllers\ProductionController.cs" />
     <Compile Include="controllers\PurchasingController.cs" />
     <Compile Include="controllers\SalesController.cs" />
     <Compile Include="CountryRegion.cs">
@@ -158,12 +157,6 @@
     </Compile>
     <Compile Include="forms\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="forms\ProductionForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="forms\ProductionForm.Designer.cs">
-      <DependentUpon>ProductionForm.cs</DependentUpon>
     </Compile>
     <Compile Include="forms\PurchasingForm.cs">
       <SubType>Form</SubType>
@@ -254,6 +247,12 @@
     <Compile Include="PurchaseOrderHeader.cs">
       <DependentUpon>AdventureWorksModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="reports\HumanResourceReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HumanResourceReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="SalesOrderDetail.cs">
       <DependentUpon>AdventureWorksModel.tt</DependentUpon>
     </Compile>
@@ -341,6 +340,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="reports\HumanResourceReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>HumanResourceReport.cs</LastGenOutput>
+    </EmbeddedResource>
     <EntityDeploy Include="AdventureWorksModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>AdventureWorksModel.Designer.cs</LastGenOutput>
@@ -377,6 +380,7 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
