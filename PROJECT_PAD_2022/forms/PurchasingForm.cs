@@ -24,6 +24,8 @@ namespace PROJECT_PAD_2022.forms
         {
             refreshDgv();
             refreshDgvInactive();
+            refreshProductDGV();
+
         }
 
         
@@ -38,7 +40,8 @@ namespace PROJECT_PAD_2022.forms
             if (purchaseTab.SelectedIndex == 0)
             {
                 refreshDgv();
-            }else if(purchaseTab.SelectedIndex == 1)
+            }
+            else if(purchaseTab.SelectedIndex == 1)
             {
                 refreshDgvInactive();
             }
@@ -49,20 +52,23 @@ namespace PROJECT_PAD_2022.forms
         private void vendorDGV_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int changeID = Convert.ToInt32(vendorDGV.Rows[e.RowIndex].Cells[0].Value);
-            
-
             if (e.ColumnIndex == 4)
             {
                 if (controller.updateData(false, changeID))
                 {
-                    MessageBox.Show("berhasil");
+                    MessageBox.Show("berhasil mengubah status");
                 }
                 else
                 {
-                    MessageBox.Show("gagal");
+                    MessageBox.Show("gagal mengubah status");
                 }
+                refreshDgv();
+            }else if(e.ColumnIndex == 5)
+            {
+                Vendor selectedvendor = controller.searchVendor(Convert.ToInt32(vendorDGV.Rows[e.RowIndex].Cells[0].Value));
+                
             }
-            refreshDgv();
+            
         }
         public void refreshDgv()
         {
@@ -77,6 +83,12 @@ namespace PROJECT_PAD_2022.forms
             buttonColumn.DefaultCellStyle.NullValue = "Deactive";
             vendorDGV.Columns.Add(buttonColumn);
 
+            //select vendor
+            DataGridViewButtonColumn select = new DataGridViewButtonColumn();
+            select.HeaderText = "Change Status";
+            select.Name = "Select";
+            select.DefaultCellStyle.NullValue = "Select Vendor";
+            vendorDGV.Columns.Add(select);
         }
 
         //tab page 2
@@ -104,6 +116,13 @@ namespace PROJECT_PAD_2022.forms
             buttonColumn.Name = "DeactiveBtn";
             buttonColumn.DefaultCellStyle.NullValue = "Deactive";
             vendorDGV.Columns.Add(buttonColumn);
+
+            DataGridViewButtonColumn select = new DataGridViewButtonColumn();
+            select.HeaderText = "Change Status";
+            select.Name = "Select";
+            select.DefaultCellStyle.NullValue = "Select Vendor";
+            vendorDGV.Columns.Add(select);
+
         }
 
         private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
@@ -122,7 +141,7 @@ namespace PROJECT_PAD_2022.forms
         private void vendorinactive_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             int changeID = Convert.ToInt32(vendorinactive.Rows[e.RowIndex].Cells[0].Value);
-
+            
 
             if (e.ColumnIndex == 4)
             {
@@ -134,9 +153,35 @@ namespace PROJECT_PAD_2022.forms
                 {
                     MessageBox.Show("gagal");
                 }
+                refreshDgvInactive();
             }
-            refreshDgvInactive()  ;
+            
+        }
+
+        //product DGV
+        private void productDGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            MessageBox.Show(e.ColumnIndex.ToString());
+            if(e.ColumnIndex == 0)
+            {
+                SelectVendorForm selectVendorForm = new SelectVendorForm(Convert.ToInt32(productDGV.Rows[e.RowIndex].Cells[1].Value),controller);
+                selectVendorForm.ShowDialog();
+            }
         }
         
+        public void refreshProductDGV()
+        {
+            productDGV.DataSource = null;
+            productDGV.DataSource = controller.loadProductItem();
+
+            DataGridViewButtonColumn buttonColumn = new DataGridViewButtonColumn();
+            buttonColumn.HeaderText = "Buy";
+            buttonColumn.Name = "BuyBtn";
+            buttonColumn.DefaultCellStyle.NullValue = "Buy";
+            productDGV.Columns.Add(buttonColumn);
+            productDGV.Columns[1].Visible = false;
+        }
+
+
     }
 }

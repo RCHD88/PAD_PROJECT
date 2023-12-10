@@ -99,6 +99,51 @@ namespace PROJECT_PAD_2022.controllers
             return false;
             
         }
+
+        public List<object> loadProductItem()
+        {
+
+            var productlist = database.Products
+                                .Where(p =>  p.MakeFlag==false && p.SellEndDate ==null)
+                                .Select(p => new
+                                {
+                                    ProductID = p.ProductID,
+                                    Name = p.Name,
+                                    Class = p.Class == "H" ? "High" : (p.Class == "M" ? "Medium" : (p.Class == "S" ? "Small" : "Unknown")),
+                                    Color = p.Color,
+                                    Size = p.Size,
+                                    Style = p.Style,
+                                    Weight = p.Weight,
+                                    Price = p.ListPrice
+                                })
+                                .ToList();
+            return productlist.Cast<object>().ToList();   
+        }
+        
+        public Vendor searchVendor(int id)
+        {
+            Vendor searchedvendor = database.Vendors.Where(v=>v.BusinessEntityID == id).FirstOrDefault();
+
+            return searchedvendor;
+        }
+
+        public List<object> LoadAvailableVendor(int a)
+        {
+            var temp = (from ProductVendor pv in database.ProductVendors
+                       join Vendor v in database.Vendors on pv.BusinessEntityID equals v.BusinessEntityID
+                       where v.ActiveFlag == true && pv.ProductID.Equals(a)
+                       select new
+                       {
+                           ID = v.BusinessEntityID,
+                           Nama = v.Name,
+                           Web = v.PurchasingWebServiceURL != null ? v.PurchasingWebServiceURL : "-",
+                           Rating = v.CreditRating == 1 ? "Superior (1)" :
+                                              v.CreditRating == 2 ? "Excellent (2)" :
+                                              v.CreditRating == 3 ? "Above average (3)" :
+                                              v.CreditRating == 4 ? "Average (4)" : "Below Average (5)"
+                       }).ToList();
+            return temp.Cast<object>().ToList();
+        }
         
 
     }
