@@ -161,11 +161,18 @@ namespace PROJECT_PAD_2022.forms
         //product DGV
         private void productDGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            MessageBox.Show(e.ColumnIndex.ToString());
             if(e.ColumnIndex == 0)
             {
-                SelectVendorForm selectVendorForm = new SelectVendorForm(Convert.ToInt32(productDGV.Rows[e.RowIndex].Cells[1].Value),controller);
-                selectVendorForm.ShowDialog();
+                if (controller.LoadAvailableVendor(Convert.ToInt32(productDGV.Rows[e.RowIndex].Cells[1].Value)).Any())
+                {
+                    SelectVendorForm selectVendorForm = new SelectVendorForm(Convert.ToInt32(productDGV.Rows[e.RowIndex].Cells[1].Value), controller);
+                    selectVendorForm.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Tidak ada vendor yang menjual barangnya");
+                }
+                
             }
         }
         

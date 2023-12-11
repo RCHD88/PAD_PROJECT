@@ -72,6 +72,23 @@ namespace PROJECT_PAD_2022.controllers
                                   })
                                   .ToList();
                 return vendordata.Cast<object>().ToList();
+            }else if(orderby==2)
+            {
+                var vendordata = (from Vendor v in database.Vendors
+                                  .OrderBy(v => v.Name)
+                                  where v.ActiveFlag == active
+                                  select new
+                                  {
+                                      ID = v.BusinessEntityID,
+                                      Nama = v.Name,
+                                      Web = v.PurchasingWebServiceURL != null ? v.PurchasingWebServiceURL : "-",
+                                      Rating = v.CreditRating == 1 ? "Superior (1)" :
+                                               v.CreditRating == 2 ? "Excellent (2)" :
+                                               v.CreditRating == 3 ? "Above average (3)" :
+                                               v.CreditRating == 4 ? "Average (4)" : "Below Average (5)"
+                                  })
+                                  .ToList();
+                return vendordata.Cast<object>().ToList();
             }
             return null;
         }
@@ -103,21 +120,36 @@ namespace PROJECT_PAD_2022.controllers
         public List<object> loadProductItem()
         {
 
-            var productlist = database.Products
-                                .Where(p =>  p.MakeFlag==false && p.SellEndDate ==null)
+            /*var productlist = database.Products
+                                .Where(p =>  p.SellEndDate ==null && p.ListPrice>0)
                                 .Select(p => new
                                 {
                                     ProductID = p.ProductID,
                                     Name = p.Name,
-                                    Class = p.Class == "H" ? "High" : (p.Class == "M" ? "Medium" : (p.Class == "S" ? "Small" : "Unknown")),
+                                    Class = p.Class == "H" ? "High" : (p.Class == "M" ? "Medium" : (p.Class == "S" ? "Small" : "-")),
                                     Color = p.Color,
                                     Size = p.Size,
-                                    Style = p.Style,
+                                    Style = p.Style == "M" ? "Mens" : (p.Style == "W" ? "Womens" : "Universal"),
                                     Weight = p.Weight,
                                     Price = p.ListPrice
                                 })
-                                .ToList();
-            return productlist.Cast<object>().ToList();   
+                                .ToList();*/
+            var product = (from Product p in database.Products
+                           join ProductVendor pv in database.ProductVendors on p.ProductID equals pv.ProductID
+                           join Vendor v in database.Vendors on pv.BusinessEntityID equals v.BusinessEntityID
+                           where v.ActiveFlag == true && p.ListPrice >0 && p.SellEndDate ==null
+                           select new
+                           {
+                               ProductID = pv.ProductID,
+                               Name = p.Name,
+                               Class = p.Class == "H" ? "High" : (p.Class == "M" ? "Medium" : (p.Class == "S" ? "Small" : "-")),
+                               Color = p.Color,
+                               Size = p.Size,
+                               Style = p.Style == "M" ? "Mens" : (p.Style == "W" ? "Womens" : "Universal"),
+                               Weight = p.Weight,
+                               Price = p.ListPrice
+                           }).ToList();
+            return product.Cast<object>().ToList();   
         }
         
         public Vendor searchVendor(int id)
