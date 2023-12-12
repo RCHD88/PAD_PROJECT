@@ -67,7 +67,7 @@
             this.labelEmail.Name = "labelEmail";
             this.labelEmail.Size = new System.Drawing.Size(106, 35);
             this.labelEmail.TabIndex = 2;
-            this.labelEmail.Text = "Email :";
+            this.labelEmail.Text = "LoginID :";
             this.labelEmail.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // emailTextBox
@@ -77,16 +77,17 @@
             this.emailTextBox.Name = "emailTextBox";
             this.emailTextBox.Size = new System.Drawing.Size(341, 29);
             this.emailTextBox.TabIndex = 3;
+            this.emailTextBox.Text = "adventure-works\\";
             // 
             // labelInfo
             // 
             this.labelInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelInfo.Location = new System.Drawing.Point(19, 59);
+            this.labelInfo.Location = new System.Drawing.Point(12, 49);
             this.labelInfo.Name = "labelInfo";
-            this.labelInfo.Size = new System.Drawing.Size(541, 42);
+            this.labelInfo.Size = new System.Drawing.Size(548, 42);
             this.labelInfo.TabIndex = 4;
-            this.labelInfo.Text = "Aplikasi hanya disediakan untuk employee dengan department Production, Sales, Hum" +
-    "anResources, dan Purchasing";
+            this.labelInfo.Text = "Aplikasi hanya disediakan untuk employee dengan department Sales, HumanResources," +
+    " dan Purchasing";
             this.labelInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // LoginForm

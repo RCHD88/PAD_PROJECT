@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.activeTab = new System.Windows.Forms.TabPage();
             this.allButton = new System.Windows.Forms.Button();
@@ -48,13 +48,13 @@
             this.inactivetotalLabel = new System.Windows.Forms.Label();
             this.inactiveDataGridView = new System.Windows.Forms.DataGridView();
             this.reportTab = new System.Windows.Forms.TabPage();
+            this.printButton = new System.Windows.Forms.Button();
+            this.generateReportButton = new System.Windows.Forms.Button();
+            this.crystalReportViewer = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.label1 = new System.Windows.Forms.Label();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.logoutButton = new System.Windows.Forms.Button();
-            this.crystalReportViewer = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
-            this.generateReportButton = new System.Windows.Forms.Button();
-            this.printButton = new System.Windows.Forms.Button();
             this.tabControl.SuspendLayout();
             this.activeTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
@@ -206,14 +206,14 @@
             this.dataGridView.AllowUserToResizeRows = false;
             this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView.Location = new System.Drawing.Point(7, 35);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.ReadOnly = true;
@@ -264,14 +264,14 @@
             this.inactiveDataGridView.AllowUserToResizeRows = false;
             this.inactiveDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.inactiveDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.inactiveDataGridView.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.inactiveDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
             this.inactiveDataGridView.Location = new System.Drawing.Point(7, 35);
             this.inactiveDataGridView.Name = "inactiveDataGridView";
             this.inactiveDataGridView.ReadOnly = true;
@@ -292,6 +292,37 @@
             this.reportTab.TabIndex = 2;
             this.reportTab.Text = "Report";
             this.reportTab.UseVisualStyleBackColor = true;
+            // 
+            // printButton
+            // 
+            this.printButton.Location = new System.Drawing.Point(186, 6);
+            this.printButton.Name = "printButton";
+            this.printButton.Size = new System.Drawing.Size(173, 29);
+            this.printButton.TabIndex = 2;
+            this.printButton.Text = "Print Report";
+            this.printButton.UseVisualStyleBackColor = true;
+            this.printButton.Click += new System.EventHandler(this.printButton_Click);
+            // 
+            // generateReportButton
+            // 
+            this.generateReportButton.Location = new System.Drawing.Point(7, 7);
+            this.generateReportButton.Name = "generateReportButton";
+            this.generateReportButton.Size = new System.Drawing.Size(173, 29);
+            this.generateReportButton.TabIndex = 1;
+            this.generateReportButton.Text = "Generate Report";
+            this.generateReportButton.UseVisualStyleBackColor = true;
+            this.generateReportButton.Click += new System.EventHandler(this.generateReportButton_Click);
+            // 
+            // crystalReportViewer
+            // 
+            this.crystalReportViewer.ActiveViewIndex = -1;
+            this.crystalReportViewer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.crystalReportViewer.Cursor = System.Windows.Forms.Cursors.Default;
+            this.crystalReportViewer.Location = new System.Drawing.Point(7, 42);
+            this.crystalReportViewer.Name = "crystalReportViewer";
+            this.crystalReportViewer.Size = new System.Drawing.Size(1095, 437);
+            this.crystalReportViewer.TabIndex = 0;
+            this.crystalReportViewer.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             // 
             // label1
             // 
@@ -332,37 +363,6 @@
             this.logoutButton.Text = "LOG OUT";
             this.logoutButton.UseVisualStyleBackColor = false;
             this.logoutButton.Click += new System.EventHandler(this.logoutButton_Click);
-            // 
-            // crystalReportViewer
-            // 
-            this.crystalReportViewer.ActiveViewIndex = -1;
-            this.crystalReportViewer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.crystalReportViewer.Cursor = System.Windows.Forms.Cursors.Default;
-            this.crystalReportViewer.Location = new System.Drawing.Point(7, 42);
-            this.crystalReportViewer.Name = "crystalReportViewer";
-            this.crystalReportViewer.Size = new System.Drawing.Size(1095, 437);
-            this.crystalReportViewer.TabIndex = 0;
-            this.crystalReportViewer.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
-            // 
-            // generateReportButton
-            // 
-            this.generateReportButton.Location = new System.Drawing.Point(7, 7);
-            this.generateReportButton.Name = "generateReportButton";
-            this.generateReportButton.Size = new System.Drawing.Size(173, 29);
-            this.generateReportButton.TabIndex = 1;
-            this.generateReportButton.Text = "Generate Global Report";
-            this.generateReportButton.UseVisualStyleBackColor = true;
-            this.generateReportButton.Click += new System.EventHandler(this.generateReportButton_Click);
-            // 
-            // printButton
-            // 
-            this.printButton.Location = new System.Drawing.Point(186, 6);
-            this.printButton.Name = "printButton";
-            this.printButton.Size = new System.Drawing.Size(173, 29);
-            this.printButton.TabIndex = 2;
-            this.printButton.Text = "Print Report";
-            this.printButton.UseVisualStyleBackColor = true;
-            this.printButton.Click += new System.EventHandler(this.printButton_Click);
             // 
             // HumanResourceForm
             // 

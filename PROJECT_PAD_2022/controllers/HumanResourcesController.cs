@@ -60,6 +60,12 @@ namespace PROJECT_PAD_2022.controllers
             employee.CurrentFlag = false;
             database.SaveChanges();
         }
+        public void activateEmployee(int business_entity_id)
+        {
+            Employee employee = database.Employees.Where(em => em.BusinessEntityID == business_entity_id).FirstOrDefault();
+            employee.CurrentFlag = true;
+            database.SaveChanges();
+        }
         public Employee getEmployeeByBusinessEntityId(int business_entity_id)
         {
             if (database.Employees.Any(em => em.BusinessEntityID == business_entity_id))

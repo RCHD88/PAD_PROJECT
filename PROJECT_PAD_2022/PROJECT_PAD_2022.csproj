@@ -170,6 +170,12 @@
     <Compile Include="forms\SalesForm.Designer.cs">
       <DependentUpon>SalesForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\SalesReportPreview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\SalesReportPreview.Designer.cs">
+      <DependentUpon>SalesReportPreview.cs</DependentUpon>
+    </Compile>
     <Compile Include="Illustration.cs">
       <DependentUpon>AdventureWorksModel.tt</DependentUpon>
     </Compile>
@@ -253,6 +259,12 @@
       <DependentUpon>HumanResourceReport.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="reports\SalesTransactionReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SalesTransactionReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="SalesOrderDetail.cs">
       <DependentUpon>AdventureWorksModel.tt</DependentUpon>
     </Compile>
@@ -331,6 +343,9 @@
     <EmbeddedResource Include="forms\SalesForm.resx">
       <DependentUpon>SalesForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="forms\SalesReportPreview.resx">
+      <DependentUpon>SalesReportPreview.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -343,6 +358,10 @@
     <EmbeddedResource Include="reports\HumanResourceReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>HumanResourceReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reports\SalesTransactionReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>SalesTransactionReport.cs</LastGenOutput>
     </EmbeddedResource>
     <EntityDeploy Include="AdventureWorksModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>

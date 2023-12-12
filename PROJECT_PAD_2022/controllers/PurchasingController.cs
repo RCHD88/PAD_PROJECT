@@ -9,11 +9,12 @@ namespace PROJECT_PAD_2022.controllers
     public class PurchasingController
     {
         protected AdventureWorks2022Entities database;
-        Employee employee;
+        protected Employee employee;
         public PurchasingController(AdventureWorks2022Entities database, Employee employee)
         {
             this.database = database;
             this.employee = employee;
         }
+        
     }
 }

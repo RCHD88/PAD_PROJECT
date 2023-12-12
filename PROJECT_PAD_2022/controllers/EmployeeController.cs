@@ -14,6 +14,7 @@ namespace PROJECT_PAD_2022.controllers
         public EmployeeController()
         {
             database = new AdventureWorks2022Entities();
+            employee = null;
         }
         public EmployeeController(AdventureWorks2022Entities database)
         {
@@ -23,14 +24,18 @@ namespace PROJECT_PAD_2022.controllers
         {
             return employee;
         }
-        public bool loginEmployee(string email)
+        public bool loginEmployee(string loginid)
         {
-            if(database.EmailAddresses.Any(em => em.EmailAddress1 == email))
+            if(database.Employees.Any(em => em.LoginID == loginid))
             {
-                employee = database.EmailAddresses.Where(em => em.EmailAddress1 == email).FirstOrDefault().Person.Employee;
+                employee = database.Employees.Where(em => em.LoginID == loginid).FirstOrDefault();
                 return true;
             }
             return false;
+        }
+        public void logoutEmployee()
+        {
+            employee = null;
         }
         public string getDepartmentName()
         {
@@ -41,6 +46,14 @@ namespace PROJECT_PAD_2022.controllers
                                .FirstOrDefault().Department.Name;
             }
             return "";
+        }
+        public bool isSalesPerson()
+        {
+            if (employee != null)
+            {
+                return database.SalesPersons.Any(sp => sp.BusinessEntityID == employee.BusinessEntityID);
+            }
+            return false;
         }
         public HumanResourcesController getHumanResourcesControllerWithDB()
         {

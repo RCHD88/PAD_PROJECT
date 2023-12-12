@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.CodeAnalysis;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,7 @@ using System.Windows.Forms;
 
 namespace PROJECT_PAD_2022
 {
+    [ExcludeFromCodeCoverage]
     public partial class LoginForm : Form
     {
         EmployeeController employeeController;
@@ -23,16 +25,19 @@ namespace PROJECT_PAD_2022
 
         private void loginButton_Click(object sender, EventArgs e)
         {
-            string email_value = emailTextBox.Text;
-            bool success = employeeController.loginEmployee(email_value);
+            string loginid = emailTextBox.Text;
+            bool success = employeeController.loginEmployee(loginid);
             if(success)
             {
                 string department_name = employeeController.getDepartmentName();
                 if(department_name == "Sales")
                 {
-                    SalesForm form = new SalesForm(employeeController.GetSalesControllerWithDB());
-                    this.Hide();
-                    form.ShowDialog();
+                    if (employeeController.isSalesPerson())
+                    {
+                        SalesForm form = new SalesForm(employeeController.GetSalesControllerWithDB());
+                        this.Hide();
+                        form.ShowDialog();
+                    }
                 }
                 else if (department_name == "Purchasing")
                 {
@@ -52,6 +57,8 @@ namespace PROJECT_PAD_2022
                 }
                 emailTextBox.Text = string.Empty;
                 this.Show();
+
+                employeeController.logoutEmployee();
             }
             else
             {
@@ -70,5 +77,6 @@ namespace PROJECT_PAD_2022
             Button button = sender as Button;
             button.BackColor = Color.WhiteSmoke;
         }
+
     }
 }

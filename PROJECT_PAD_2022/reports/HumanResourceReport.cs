@@ -14,13 +14,13 @@ namespace PROJECT_PAD_2022.reports {
     using CrystalDecisions.Shared;
     using CrystalDecisions.ReportSource;
     using CrystalDecisions.CrystalReports.Engine;
-    
-    
+    using System.Diagnostics.CodeAnalysis;
+
+    [ExcludeFromCodeCoverage]
+
     public class HumanResourceReport : ReportClass {
-        
         public HumanResourceReport() {
         }
-        
         public override string ResourceName {
             get {
                 return "HumanResourceReport.rpt";
