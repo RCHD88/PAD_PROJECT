@@ -47,13 +47,12 @@ namespace PROJECT_PAD_2022.forms
             }
         }
 
-        
-
         private void vendorDGV_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int changeID = Convert.ToInt32(vendorDGV.Rows[e.RowIndex].Cells[0].Value);
+            
             if (e.ColumnIndex == 4)
             {
+                int changeID = Convert.ToInt32(vendorDGV.Rows[e.RowIndex].Cells[0].Value);
                 if (controller.updateData(false, changeID))
                 {
                     MessageBox.Show("berhasil mengubah status");
@@ -65,8 +64,9 @@ namespace PROJECT_PAD_2022.forms
                 refreshDgv();
             }else if(e.ColumnIndex == 5)
             {
-                Vendor selectedvendor = controller.searchVendor(Convert.ToInt32(vendorDGV.Rows[e.RowIndex].Cells[0].Value));
-                
+                int id = Convert.ToInt32(vendorDGV.Rows[e.RowIndex].Cells[0].Value);
+                ProductVendorForm selectVendorForm = new ProductVendorForm(id,controller);
+                selectVendorForm.ShowDialog();
             }
             
         }
@@ -163,9 +163,9 @@ namespace PROJECT_PAD_2022.forms
         {
             if(e.ColumnIndex == 0)
             {
-                if (controller.LoadAvailableVendor(Convert.ToInt32(productDGV.Rows[e.RowIndex].Cells[1].Value)).Any())
+                if (controller.LoadAvailableProduct(Convert.ToInt32(productDGV.Rows[e.RowIndex].Cells[1].Value)).Any())
                 {
-                    SelectVendorForm selectVendorForm = new SelectVendorForm(Convert.ToInt32(productDGV.Rows[e.RowIndex].Cells[1].Value), controller);
+                    ProductVendorForm selectVendorForm = new ProductVendorForm(Convert.ToInt32(productDGV.Rows[e.RowIndex].Cells[1].Value), controller);
                     selectVendorForm.ShowDialog();
                 }
                 else
@@ -186,7 +186,6 @@ namespace PROJECT_PAD_2022.forms
             buttonColumn.Name = "BuyBtn";
             buttonColumn.DefaultCellStyle.NullValue = "Buy";
             productDGV.Columns.Add(buttonColumn);
-            productDGV.Columns[1].Visible = false;
         }
 
 

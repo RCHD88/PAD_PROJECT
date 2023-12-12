@@ -84,4 +84,4 @@ D:\KULIAH\semester3\PAD\porjectPAD\PAD_PROJECT\PROJECT_PAD_2022\obj\Debug\PROJEC
 D:\KULIAH\semester3\PAD\porjectPAD\PAD_PROJECT\PROJECT_PAD_2022\obj\Debug\PROJECT_PAD_2022.exe
 D:\KULIAH\semester3\PAD\porjectPAD\PAD_PROJECT\PROJECT_PAD_2022\obj\Debug\PROJECT_PAD_2022.pdb
 D:\KULIAH\semester3\PAD\porjectPAD\PAD_PROJECT\PROJECT_PAD_2022\obj\Debug\PROJECT_PAD_2022.forms.PurchasingForm.resources
-D:\KULIAH\semester3\PAD\porjectPAD\PAD_PROJECT\PROJECT_PAD_2022\obj\Debug\PROJECT_PAD_2022.forms.SelectVendorForm.resources
+D:\KULIAH\semester3\PAD\porjectPAD\PAD_PROJECT\PROJECT_PAD_2022\obj\Debug\PROJECT_PAD_2022.forms.ProductVendorForm.resources
