@@ -1,0 +1,23 @@
+HUMAN RESOURCES bisa menggunakan login id berikut :
+
+adventure-works\paula0
+adventure-works\grant0
+adventure-works\hao0
+adventure-works\vidur0
+
+
+PURCHASING bisa menggunakan login id berikut :
+
+adventure-works\sheela0
+adventure-works\mikael0
+adventure-works\arvind0
+adventure-works\linda2
+
+
+SALES bisa menggunakan login id berikut :
+
+adventure-works\brian3
+adventure-works\stephen0
+adventure-works\michael9
+adventure-works\linda3
+
